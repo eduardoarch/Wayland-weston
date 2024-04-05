@@ -1,0 +1,34 @@
+
+[eduardo@archlinux ~]$ sudo pacman -Syu xf86-video-intel
+[sudo] password for eduardo: 
+:: Synchronizing package databases...
+ core is up to date
+ extra is up to date
+:: Starting full system upgrade...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (2) libxvmc-1.0.14-1  xf86-video-intel-1:2.99.917+923+gb74b67f0-2
+
+:: Processing package changes...
+(1/2) installing libxvmc                                      [----------------------------------] 100%
+(2/2) installing xf86-video-intel                             [----------------------------------] 100%
+>>> This driver now uses DRI3 as the default Direct Rendering
+    Infrastructure. You can try falling back to DRI2 if you run
+    into trouble. To do so, save a file with the following 
+    content as /etc/X11/xorg.conf.d/20-intel.conf :
+      Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "DRI" "2"             # DRI3 is now default 
+        #Option      "AccelMethod"  "sna" # default
+        #Option      "AccelMethod"  "uxa" # fallback
+      EndSection
+Optional dependencies for xf86-video-intel
+    libxrandr: for intel-virtual-output [installed]
+    libxinerama: for intel-virtual-output [installed]
+    libxcursor: for intel-virtual-output [installed]
+    libxtst: for intel-virtual-output [installed]
+    libxss: for intel-virtual-output [installed]
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
