@@ -32,3 +32,12 @@ Optional dependencies for xf86-video-intel
     libxss: for intel-virtual-output [installed]
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
+
+Requested GL implementation (gl=none,angle=none) not found in allowed implementations: 
+[(gl=egl-angle,angle=opengl),(gl=egl-angle,angle=opengles),(gl=egl-gles2,angle=none),(gl=egl-angle,angle=swiftshader)].
+
+e.g of user:
+[browser] [flag of plataform] [flag DRM]
+"chromium --ozone-platform-hint=wayland --use-gl=gl"
+"firefox --ozone-platform-hint=wayland --use-gl=gl"
+
