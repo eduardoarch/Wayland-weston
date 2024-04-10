@@ -1,34 +1,58 @@
+#
 # This file is parsed by pam_env module
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 
+XDG_CONFIG_HOME=/home/eduardo/.config
+XDG_CACHE_HOME=/home/eduardo/.cache
+XDG_DATA_HOME=/home/eduardo/.local/share
+XDG_STATE_HOME=/home/eduardo/.local/state
+#XDG_RUNTIME_DIR=/run/user/%U
+
+VK_EXT_shader_object=1
+-fanalyzer
 MOZ_ENABLE_WAYLAND=1
 GTK_THEME=Adwaita:dark
+#--gtk-version=4
+#--enable-features=AllowQt
 #LIBVA_DRI3_DISABLE=1 (Este pode ser descomentado se necessário)
 LIBVA_DRIVER_NAME=iHD
 XDG_SEAT=seat0
 WESTON_LIBINPUT_LOG_PRIORITY=debug
-WAYLAND_DISPLAY=wayland-1
+#WAYLAND_DISPLAY=wayland-1
 _JAVA_AWT_WM_NONREPARENTING=1
 WINDOW_MANAGER=weston
 VDPAU_DRIVER=va_gl
 LIBVA_DRIVERS_PATH=/usr/lib/dri/iHD_drv_video.so
-DISPLAY=1
+DISPLAY=":1"
+GDK_BACKEND="wayland"
+
 mesa_glthread=true
 FUSE_PASSTHROUGH=1
 WESTON_CONFIG_FILE=/home/eduardo/.config/weston.ini
 WESTON_MODULE_DIR=/usr/lib/weston/
 GSK_RENDERER=gl
--march=xeon
--mapxf=xeon
--std=c2x
--std=gnu2x
+#-march=skylake
+#-mapxf=skylake
+#-std=c2x
+#-std=gnu2x
 kmd=enabled
-CONFIG_DRM_XE_FORCE_PROBE=1
+
+CONFIG_DRM_XE_FORCE_PROBE=""
 CONFIG_DRM_XE_DISPLAY=1
 CONFIG_DRM_XE=1
 CONFIG_DRM_I915=1
-Dintel-xe-kmd=enabled
+CONFIG_DRM_I915_GVT=1
 
-#sha1sum /usr/lib/dri/* | sort
-LIBVA_DRIVERS_PATH=/usr/lib/dri/iHD_drv_video.so
+CONFIG_DRM_I915_HEARTBEAT_INTERVAL=2500
+CONFIG_DRM_I915_PREEMPT_TIMEOUT=640
+CONFIG_DRM_I915_PREEMPT_TIMEOUT_COMPUTE=7500
+CONFIG_DRM_I915_MAX_REQUEST_BUSYWAIT=8000
+CONFIG_DRM_I915_STOP_TIMEOUT=100
+CONFIG_DRM_I915_TIMELICE_DURATION=1
+
+Dintel-xe-kmd=enabled
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+en_US.UTF-8 UTF-8
+
